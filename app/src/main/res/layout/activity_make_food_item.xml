@@ -9,7 +9,6 @@
 
     <ImageButton
         android:id="@+id/makefooditem_imgbtn"
-        android:text="button2"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintHorizontal_chainStyle="packed"
