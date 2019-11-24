@@ -1,8 +1,8 @@
-package com.example.sojun_project;
+package com.example.sojun_project.Datas;
 
 import android.graphics.drawable.Drawable;
 
-public class Data {
+public class ItemData {
     private String foodname;
     private String foodkalori;
     private String foodhowmuch;
@@ -32,7 +32,7 @@ public class Data {
         this.foodimg = foodimg;
     }
 
-    public Data(String foodname, String foodkalori, String foodhowmuch,Drawable foodimg) {
+    public ItemData(String foodname, String foodkalori, String foodhowmuch, Drawable foodimg) {
         this.foodhowmuch=foodhowmuch;
         this.foodname = foodname;
         this.foodkalori = foodkalori;

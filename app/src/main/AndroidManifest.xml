@@ -9,6 +9,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activities.ViewPagerActivity">
+        </activity>
+        <activity android:name=".activities.ModifyDateFooditem">
+        </activity>
+        <activity android:name=".activities.MakeFoodItemActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,9 +25,6 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ModifyDateFooditem">
-        </activity>
-        <activity android:name=".activities.MakeFoodItemActivity" />
 
     </application>
 

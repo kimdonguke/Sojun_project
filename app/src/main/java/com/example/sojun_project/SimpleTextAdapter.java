@@ -1,12 +1,12 @@
 package com.example.sojun_project;
 
-import android.content.Context;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.sojun_project.Datas.ItemData;
 
 import java.util.ArrayList;
 
@@ -38,8 +38,8 @@ public class SimpleTextAdapter extends RecyclerView.Adapter<SimpleTextAdapter.Vi
             });
         }
     }
-    private ArrayList<Data> mData=null;
-    SimpleTextAdapter(ArrayList<Data> list){
+    private ArrayList<ItemData> mData=null;
+    SimpleTextAdapter(ArrayList<ItemData> list){
         mData=list;
     }
 
@@ -51,7 +51,7 @@ public class SimpleTextAdapter extends RecyclerView.Adapter<SimpleTextAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull SimpleTextAdapter.ViewHolder viewHolder, int i) {
-        Data item =mData.get(i);
+        ItemData item =mData.get(i);
     }
 
     @Override// 그거 아니야 형 ㅅㅂ

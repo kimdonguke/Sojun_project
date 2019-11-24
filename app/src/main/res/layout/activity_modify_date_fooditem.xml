@@ -4,122 +4,122 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.ModifyDateFooditem"
     android:orientation="horizontal"
-    >
+    tools:context=".activities.ModifyDateFooditem">
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/modifyitem_morning"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/morninggradient" />
+
+        <Button
+            android:id="@+id/modifyitem_lunch"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/lunchgradient" />
+
+        <Button
+            android:id="@+id/modifyitem_dinner"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/dinnergradient" />
+
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="10dp"
-        android:id="@+id/linear"
-        >
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginVertical="10dp"
-            android:background="@drawable/morninggradient"
-            android:id="@+id/modifyitem_morning"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginVertical="10dp"
-            android:background="@drawable/lunchgradient"
-            android:id="@+id/modifyitem_lunch"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginVertical="10dp"
-            android:background="@drawable/dinnergradient"
-            android:id="@+id/modifyitem_dinner"
-            />
+        android:layout_marginLeft="15dp"
+        android:layout_weight="17"
+        android:orientation="vertical">
 
-    </LinearLayout>
-   <LinearLayout
-       android:layout_width="0dp"
-       android:layout_height="match_parent"
-       android:layout_weight="17"
-       android:orientation="vertical"
-       android:layout_marginLeft="15dp">
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:padding="4dp"
-           android:gravity="center"
-           android:background="#C5C2C2"
-           android:orientation="horizontal"
-           android:layout_gravity="right"
-           >
-           <com.google.android.material.button.MaterialButton
-               android:layout_width="0dp"
-               android:layout_height="wrap_content"
-               android:layout_weight="3"
-               tools:text="monday//choose your date"
-               android:id="@+id/modifyitem_dialogue"
-               />
-           <!--switch 온이면 달력 온 아니면 1주(요일 선택 시키는) 다이얼로그 띄우기-->
-           <Switch
-               android:layout_width="0dp"
-               android:layout_height="wrap_content"
-               android:text="once"
-               android:gravity="center"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="#C5C2C2"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/modifyitem_dialogue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                tools:text="monday//choose your date" />
+            <!--switch 온이면 달력 온 아니면 1주(요일 선택 시키는) 다이얼로그 띄우기-->
+            <Switch
+                android:id="@+id/modifyitem_onceswitch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-               android:id="@+id/modifyitem_onceswitch"
-               />
-       </LinearLayout>
-       <androidx.recyclerview.widget.RecyclerView
-           android:layout_width="match_parent"
-           android:layout_height="0dp"
-           android:layout_weight="7"
-           android:scrollbarFadeDuration="0"
-           android:scrollbarSize="5dp"
-           ></androidx.recyclerview.widget.RecyclerView>
-       <androidx.constraintlayout.widget.ConstraintLayout
-           android:layout_width="match_parent"
-           android:layout_height="0dp"
-           android:layout_weight="3">
+                android:gravity="center"
+                android:text="once" />
+        </LinearLayout>
 
-           <ImageButton
-               android:id="@+id/modifyitem_imgbtn"
-               android:layout_width="100dp"
-               android:layout_height="100dp"
-               app:layout_constraintHorizontal_chainStyle="packed"
-               app:layout_constraintLeft_toLeftOf="parent"
-               app:layout_constraintRight_toLeftOf="@id/makefooditem_name"
-               app:layout_constraintTop_toTopOf="parent"
-               app:layout_constraintBottom_toBottomOf="parent"
-               android:src="@drawable/appleimg"
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+
+            android:layout_weight="7"
+            android:scrollbarFadeDuration="0"
+            android:scrollbarSize="5dp"></androidx.recyclerview.widget.RecyclerView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3">
+
+            <ImageButton
+                android:id="@+id/modifyitem_imgbtn"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginLeft="30sp"
-               />
+                android:src="@drawable/appleimg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/modifyitem_name"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-           <EditText
-               android:id="@+id/modifyitem_name"
-               android:layout_width="200dp"
-               android:layout_height="wrap_content"
-               android:hint="Food's name"
-               app:layout_constraintBottom_toTopOf="@+id/modifyitem_kalori"
-               app:layout_constraintLeft_toRightOf="@+id/modifyitem_imgbtn"
-               app:layout_constraintRight_toRightOf="parent"
-               app:layout_constraintTop_toTopOf="@+id/modifyitem_imgbtn" />
-           <EditText
-               android:id="@+id/modifyitem_kalori"
-               android:layout_width="200dp"
-               android:layout_height="wrap_content"
-               android:hint="Food's kalori"
-               app:layout_constraintBottom_toBottomOf="@+id/modifyitem_imgbtn"
-               app:layout_constraintTop_toBottomOf="@+id/modifyitem_name"
-               app:layout_constraintLeft_toLeftOf="@+id/modifyitem_name"
-               />
-       </androidx.constraintlayout.widget.ConstraintLayout>
-   </LinearLayout>
+            <EditText
+                android:id="@+id/modifyitem_name"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="Food's name"
+                app:layout_constraintBottom_toTopOf="@+id/modifyitem_kalori"
+                app:layout_constraintLeft_toRightOf="@+id/modifyitem_imgbtn"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/modifyitem_imgbtn" />
+
+            <EditText
+                android:id="@+id/modifyitem_kalori"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="Food's kalori"
+                app:layout_constraintBottom_toBottomOf="@+id/modifyitem_imgbtn"
+                app:layout_constraintLeft_toLeftOf="@+id/modifyitem_name"
+                app:layout_constraintTop_toBottomOf="@+id/modifyitem_name" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </LinearLayout>

@@ -32,13 +32,9 @@ public class MakeFoodItemActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
         if (requestCode == GET_GALLERY_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
-
             Uri selectedImageUri = data.getData();
             imageview.setImageURI(selectedImageUri);
-
         }
-
     }
 }
