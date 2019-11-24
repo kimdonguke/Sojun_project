@@ -49,20 +49,40 @@
        android:layout_weight="17"
        android:orientation="vertical"
        android:layout_marginLeft="15dp">
-       <TextView
+       <LinearLayout
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:padding="10dp"
-           android:text="time"
+           android:padding="4dp"
            android:gravity="center"
            android:background="#C5C2C2"
-           />
-       <android.support.v7.widget.RecyclerView
+           android:orientation="horizontal"
+           android:layout_gravity="right"
+           >
+           <com.google.android.material.button.MaterialButton
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="3"
+               tools:text="monday//choose your date"
+               android:id="@+id/modifyitem_dialogue"
+               />
+           <!--switch 온이면 달력 온 아니면 1주(요일 선택 시키는) 다이얼로그 띄우기-->
+           <Switch
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:text="once"
+               android:gravity="center"
+                android:layout_weight="1"
+               android:id="@+id/modifyitem_onceswitch"
+               />
+       </LinearLayout>
+       <androidx.recyclerview.widget.RecyclerView
            android:layout_width="match_parent"
            android:layout_height="0dp"
            android:layout_weight="7"
-           ></android.support.v7.widget.RecyclerView>
-       <android.support.constraint.ConstraintLayout
+           android:scrollbarFadeDuration="0"
+           android:scrollbarSize="5dp"
+           ></androidx.recyclerview.widget.RecyclerView>
+       <androidx.constraintlayout.widget.ConstraintLayout
            android:layout_width="match_parent"
            android:layout_height="0dp"
            android:layout_weight="3">
@@ -87,7 +107,6 @@
                android:layout_height="wrap_content"
                android:hint="Food's name"
                app:layout_constraintBottom_toTopOf="@+id/modifyitem_kalori"
-               app:layout_constraintHorizontal_bias="0.533"
                app:layout_constraintLeft_toRightOf="@+id/modifyitem_imgbtn"
                app:layout_constraintRight_toRightOf="parent"
                app:layout_constraintTop_toTopOf="@+id/modifyitem_imgbtn" />
@@ -100,7 +119,7 @@
                app:layout_constraintTop_toBottomOf="@+id/modifyitem_name"
                app:layout_constraintLeft_toLeftOf="@+id/modifyitem_name"
                />
-       </android.support.constraint.ConstraintLayout>
+       </androidx.constraintlayout.widget.ConstraintLayout>
    </LinearLayout>
 
 </LinearLayout>

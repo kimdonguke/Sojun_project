@@ -1,16 +1,15 @@
 package com.example.sojun_project.activities;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 import com.example.sojun_project.R;
-
+//아 되고있구나 저기 형 위쪽에 안드 앱에 엑스표 쳐지고 ㅆ~ㅂ client not yet 이지랄 존~나 났어
 public class MakeFoodItemActivity extends AppCompatActivity {
 
     private final int GET_GALLERY_IMAGE = 200;
