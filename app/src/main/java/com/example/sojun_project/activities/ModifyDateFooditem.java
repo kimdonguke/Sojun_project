@@ -19,7 +19,7 @@ import java.util.Date;
 public class ModifyDateFooditem extends AppCompatActivity {
     private Button morning,lunch,dinner,makedialogue;
     private Switch once;
-    private String TAG = "PickerActivity";
+    private String TAG = "ModifyDateFooditem";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +54,7 @@ public class ModifyDateFooditem extends AppCompatActivity {
 
                 }
                 else{
-
+                    init();
                 }
             }
         });
