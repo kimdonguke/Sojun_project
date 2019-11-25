@@ -1,5 +1,7 @@
 package com.example.sojun_project;
 
+import com.example.sojun_project.fragments.FragmentDatemeal;
+
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -14,6 +16,10 @@ public class PagerAdapter extends FragmentPagerAdapter {
     public PagerAdapter(FragmentManager fm) {
         super(fm);
         list = new ArrayList<>();
+        list.add(new FragmentDatemeal());
+        list.add(new FragmentDatemeal());
+        list.add(new FragmentDatemeal());
+        list.add(new FragmentDatemeal());
     }
     @Override
     public Fragment getItem(int i) {

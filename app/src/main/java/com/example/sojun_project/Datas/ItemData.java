@@ -32,18 +32,18 @@ public class ItemData {
         this.foodimg = foodimg;
     }
 
-    public ItemData(String foodname, String foodkalori, String foodhowmuch, Drawable foodimg) {
-        this.foodhowmuch=foodhowmuch;
-        this.foodname = foodname;
-        this.foodkalori = foodkalori;
-        this.foodimg = foodimg;
-    }
-
     public String getFoodhowmuch() {
         return foodhowmuch;
     }
 
     public void setFoodhowmuch(String foodhowmuch) {
         this.foodhowmuch = foodhowmuch;
+    }
+
+    public ItemData(String foodname, String foodkalori, String foodhowmuch, Drawable foodimg) {
+        this.foodname = foodname;
+        this.foodkalori = foodkalori;
+        this.foodhowmuch = foodhowmuch;
+        this.foodimg = foodimg;
     }
 }
