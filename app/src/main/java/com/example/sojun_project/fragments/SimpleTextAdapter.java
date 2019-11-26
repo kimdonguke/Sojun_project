@@ -40,7 +40,6 @@ public class SimpleTextAdapter extends RecyclerView.Adapter<SimpleTextAdapter.Vi
                     }
                     else {  int pos = getAdapterPosition() ;
                         if (pos != RecyclerView.NO_POSITION) {
-                            // TODO : use pos.
                             howmany--;
                             food_howmuch.setText(String.valueOf(howmany));
                         }
@@ -59,8 +58,6 @@ public class SimpleTextAdapter extends RecyclerView.Adapter<SimpleTextAdapter.Vi
         View  view=LayoutInflater.from(parent.getContext()).inflate(R.layout.fooditem, parent, false);
         return new SimpleTextAdapter.ViewHolder(view);
     }
-    //형 시발 난 진짜 개 병신인가봐 병신이냐?어댑터 좆같이 짜놓고 아니 내가 이거 set하는걸 처 안짜놯네 지금보니깐
-    //이샛기 진짜 대가리 박고 자살이 답인듯 진짜 시발 좆같노 ㅇㅇㅇ ㅂㅂㅂ
     @Override
     public void onBindViewHolder(@NonNull SimpleTextAdapter.ViewHolder viewHolder, int i) {
         ItemData item =mData.get(i);

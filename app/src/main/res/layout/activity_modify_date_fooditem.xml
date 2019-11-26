@@ -64,7 +64,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                tools:text="monday//choose your date" />
+                android:text="monday"/>
             <!--switch 온이면 달력 온 아니면 1주(요일 선택 시키는) 다이얼로그 띄우기-->
             <Switch
                 android:id="@+id/modifyitem_onceswitch"
@@ -90,14 +90,13 @@
 
             <ImageButton
                 android:id="@+id/modifyitem_imgbtn"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/appleimg"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@id/modifyitem_name"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="40dp"/>
 
 
             <EditText
@@ -125,7 +124,7 @@
                 android:layout_marginBottom="5dp"
                 android:text="변경"
                 app:layout_constraintRight_toRightOf="@id/modifyitem_kalori"
-                app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/modifyitem_kalori"
                 android:id="@+id/modifyitem_modifybtn"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>

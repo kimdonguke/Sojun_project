@@ -1,5 +1,6 @@
 package com.example.sojun_project;
 
+import com.example.sojun_project.fragments.FragmentChart;
 import com.example.sojun_project.fragments.FragmentDatemeal;
 
 import androidx.annotation.Nullable;
@@ -10,20 +11,20 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 
 public class PagerAdapter extends FragmentPagerAdapter {
-    ArrayList<Fragment> list;
+    ArrayList<Fragment> mainlist;
+    ArrayList<Fragment> protoyupelist;
     String[] title=new String[]{"Borrow","Alert","connect","setting"};
 
     public PagerAdapter(FragmentManager fm) {
         super(fm);
-        list = new ArrayList<>();
-        list.add(new FragmentDatemeal());
-        list.add(new FragmentDatemeal());
-        list.add(new FragmentDatemeal());
-        list.add(new FragmentDatemeal());
+        mainlist = new ArrayList<>();
+        protoyupelist=new ArrayList<>();
+        mainlist.add(new FragmentChart());
+        mainlist.add(new FragmentDatemeal());
     }
     @Override
     public Fragment getItem(int i) {
-        return list.get(i);
+        return mainlist.get(i);
     }
 
     @Nullable
@@ -34,6 +35,6 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return list.size();
+        return mainlist.size();
     }
 }
