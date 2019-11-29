@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class PagerAdapter extends FragmentPagerAdapter {
     ArrayList<Fragment> mainlist;
     ArrayList<Fragment> protoyupelist;
-    String[] title=new String[]{"Borrow","Alert","connect","setting"};
+    String[] title=new String[]{"chart","today","connect","setting"};
 
     public PagerAdapter(FragmentManager fm) {
         super(fm);

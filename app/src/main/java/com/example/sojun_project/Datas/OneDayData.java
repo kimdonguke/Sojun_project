@@ -1,35 +1,39 @@
 package com.example.sojun_project.Datas;
 
+import android.content.ClipData;
+
+import java.util.ArrayList;
+
 public class OneDayData {
-    private OneMealData breakfast, lunch, dinner;
+   private ArrayList<ItemData> morning, lunch, dinner;
 
-    public OneDayData(OneMealData breakfast, OneMealData lunch, OneMealData dinner) {
-        this.breakfast = breakfast;
-        this.lunch = lunch;
-        this.dinner = dinner;
-    }
-
-    public OneMealData getBreakfast() {
-        return breakfast;
-    }
-
-    public void setBreakfast(OneMealData breakfast) {
-        this.breakfast = breakfast;
-    }
-
-    public OneMealData getLunch() {
-        return lunch;
-    }
-
-    public void setLunch(OneMealData lunch) {
-        this.lunch = lunch;
-    }
-
-    public OneMealData getDinner() {
+    public ArrayList<ItemData> getDinner() {
         return dinner;
     }
 
-    public void setDinner(OneMealData dinner) {
+    public void setDinner(ArrayList<ItemData> dinner) {
+        this.dinner = dinner;
+    }
+
+    public ArrayList<ItemData> getLunch() {
+        return lunch;
+    }
+
+    public void setLunch(ArrayList<ItemData> lunch) {
+        this.lunch = lunch;
+    }
+
+    public ArrayList<ItemData> getMorning() {
+        return morning;
+    }
+
+    public void setMorning(ArrayList<ItemData> morning) {
+        this.morning = morning;
+    }
+
+    public OneDayData(ArrayList<ItemData> morning, ArrayList<ItemData> lunch, ArrayList<ItemData> dinner) {
+        this.morning = morning;
+        this.lunch = lunch;
         this.dinner = dinner;
     }
 }

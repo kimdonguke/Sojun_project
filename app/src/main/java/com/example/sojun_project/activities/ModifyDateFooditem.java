@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ import java.util.Date;
 
 public class ModifyDateFooditem extends AppCompatActivity {
     private Button morning,lunch,dinner,makedialogue;
+    private EditText modifyfood_editname,modifyfood_editkalori;
     private Switch once;
     private String TAG = "ModifyDateFooditem";
     @Override
@@ -30,6 +32,9 @@ public class ModifyDateFooditem extends AppCompatActivity {
         dinner=findViewById(R.id.modifyitem_dinner);
         makedialogue=findViewById(R.id.modifyitem_dialogue);
         once=findViewById(R.id.modifyitem_onceswitch);
+        modifyfood_editname=findViewById(R.id.modifyitem_name);
+        modifyfood_editkalori=findViewById(R.id.modifyitem_kalori);
+
         morning.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +84,7 @@ public class ModifyDateFooditem extends AppCompatActivity {
         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
             Toast.makeText(getApplicationContext(), year+"년"+month+"월"+dayOfMonth+"일", Toast.LENGTH_SHORT).show();
             makedialogue.setText(month+"월"+dayOfMonth+"일");
+
         }
     };
 }

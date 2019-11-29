@@ -70,6 +70,12 @@ public class SimpleTextAdapter extends RecyclerView.Adapter<SimpleTextAdapter.Vi
     public int getItemCount() {
         return mData.size();
     }
+
+    public void updateData(ArrayList<ItemData> itemData){
+        mData.clear();
+        mData.addAll(itemData);
+        notifyDataSetChanged();
+    }
 }
 
 
