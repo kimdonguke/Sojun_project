@@ -15,8 +15,10 @@ import android.widget.Toast;
 
 import com.example.sojun_project.R;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class ModifyDateFooditem extends AppCompatActivity {
     private Button morning,lunch,dinner,makedialogue;
@@ -26,6 +28,11 @@ public class ModifyDateFooditem extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        final Date currentTime = Calendar.getInstance().getTime();
+        final SimpleDateFormat dayFormat = new SimpleDateFormat("dd", Locale.getDefault());
+        final SimpleDateFormat monthFormat = new SimpleDateFormat("MM", Locale.getDefault());
+
         setContentView(R.layout.activity_modify_date_fooditem);
         morning=findViewById(R.id.modifyitem_morning);
         lunch=findViewById(R.id.modifyitem_lunch);
@@ -70,7 +77,9 @@ public class ModifyDateFooditem extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(once.isChecked()==true){
-                    makedialogue.setText("gimoring");
+                    String month = monthFormat.format(currentTime);
+                    String day = dayFormat.format(currentTime);
+                    makedialogue.setText(month+"월"+day+"일");
                 }
                 else{
                     makedialogue.setText("Monday");
@@ -84,7 +93,6 @@ public class ModifyDateFooditem extends AppCompatActivity {
         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
             Toast.makeText(getApplicationContext(), year+"년"+month+"월"+dayOfMonth+"일", Toast.LENGTH_SHORT).show();
             makedialogue.setText(month+"월"+dayOfMonth+"일");
-
         }
     };
 }

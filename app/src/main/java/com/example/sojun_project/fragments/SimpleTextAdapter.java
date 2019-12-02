@@ -46,7 +46,7 @@ public class SimpleTextAdapter extends RecyclerView.Adapter<SimpleTextAdapter.Vi
                     }
                 }
             });
-    }
+        }
     }
 
     SimpleTextAdapter(ArrayList<ItemData> list){
