@@ -67,10 +67,12 @@ public class MakePrototype extends AppCompatActivity {
         foodName=findViewById(R.id.makeprototype_foodname);
         foodKalori=findViewById(R.id.makeprototype_kalori);
         foodHowmuch=findViewById(R.id.makeprototype_howmuch);
+
         if(onSearchData("contact")){
             Intent intent=new Intent(MakePrototype.this,ViewPagerActivity.class);
             startActivity(intent);
         }
+
         next.setOnClickListener(new View.OnClickListener() {// 다음 시간으로 넘어가기
             @Override
             public void onClick(View v) {
@@ -153,25 +155,20 @@ public class MakePrototype extends AppCompatActivity {
         });
     }
 
-       public ItemData addItem( String name, String kalori,String howmuch, Drawable foodpicture){
+    public ItemData addItem( String name, String kalori,String howmuch, Drawable foodpicture){
         ItemData item= new ItemData(name,kalori,howmuch,foodpicture);
         return item;
     }
     public void makefullPrototype(ArrayList<ItemData> moring, ArrayList<ItemData> luch, ArrayList<ItemData> diner){
-        OneDayData oneDayData = null;
-        OneWeekData oneWeekData = null;
+        OneDayData oneDayData = new OneDayData(moring,luch,diner);
         ArrayList<OneDayData> onedaydata_list=new ArrayList<>();
-        oneDayData.setMorning(moring);
-        oneDayData.setLunch(luch);
-        oneDayData.setDinner(diner);
         for(int i=0;i<7;i++){
             onedaydata_list.add(oneDayData);
         }
-        oneWeekData.setOneweekData(onedaydata_list);
+        OneWeekData oneWeekData=new OneWeekData(onedaydata_list);
         onSaveData(oneWeekData);
     }
     protected void onSaveData(OneWeekData gimoring){
-
         // Gson 인스턴스 생성
         gson = new GsonBuilder().create();
         // JSON 으로 변환
@@ -197,9 +194,5 @@ public class MakePrototype extends AppCompatActivity {
                 return true;
             }
         }
-//        TextView tvId = (TextView)findViewById(R.id.tv_id);
-//        TextView tvName = (TextView)findViewById(R.id.tv_name);
-//        tvId.setText(contact.getId());
-//        tvName.setText(contact.getName());
     }
 }
