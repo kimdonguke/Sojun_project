@@ -66,27 +66,33 @@ public class FragmentDatemeal extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getContext(), ModifyDateFooditem.class);
+                startActivity(intent);
             }
         });
         moning.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Log.e("datemeal fragment","-morning");
+                recyclerViewAdapter.updateData(morning);
+                recyclerViewAdapter.notifyDataSetChanged();
             }
         });
         luch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Log.e("datemeal fragment","-lunch");
+                recyclerViewAdapter.updateData(lunch);
+                recyclerViewAdapter.notifyDataSetChanged();
             }
         });
         diner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Log.e("datemeal fragment","-dinner");
+                recyclerViewAdapter.updateData(dinner);
+                recyclerViewAdapter.notifyDataSetChanged();
             }
         });
         return  v;
-
     }
 }
