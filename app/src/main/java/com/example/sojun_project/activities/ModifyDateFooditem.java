@@ -64,12 +64,12 @@ public class ModifyDateFooditem extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(once.isChecked()==true){
-                    Log.e("modifyDatefooditem","switch is checked");
+                    Log.e(TAG,"switch is checked");
                     DatePickerDialog dialog=new DatePickerDialog(ModifyDateFooditem.this,listener,2019,9,22);
                     dialog.show();
                 }
                 else{
-                    Log.e("modifyDatefooditem","switch is unchecked");
+                    Log.e(TAG,"switch is unchecked");
                 }
             }
         });

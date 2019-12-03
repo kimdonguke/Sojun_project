@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.MakePrototype"></activity>
-        <activity android:name=".activities.ViewPagerActivity">
+        <activity android:name=".activities.MakePrototype">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,6 +21,9 @@
 
                 <data android:mimeType="text/plain" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activities.ViewPagerActivity">
+
         </activity>
         <activity android:name=".activities.ModifyDateFooditem">
         </activity>
