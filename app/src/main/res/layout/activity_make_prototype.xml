@@ -74,26 +74,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/makeprototype_savebtn"
+        app:layout_constraintRight_toLeftOf="@+id/makeprototype_addbtn"
         app:layout_constraintLeft_toLeftOf="parent"
         android:text="lunch"
         android:layout_marginBottom="30dp"
         />
-    <Button
-        android:id="@+id/makeprototype_savebtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@+id/makeprototype_gonextbtn"
-        app:layout_constraintRight_toLeftOf="@+id/makeprototype_addbtn"
-        app:layout_constraintLeft_toRightOf="@id/makeprototype_gonextbtn"
-        android:text="save"
-        />
+
     <Button
         android:id="@+id/makeprototype_addbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@+id/makeprototype_gonextbtn"
-        app:layout_constraintLeft_toRightOf="@id/makeprototype_savebtn"
+        app:layout_constraintLeft_toRightOf="@id/makeprototype_gonextbtn"
         app:layout_constraintRight_toRightOf="parent"
         android:text="add"
         />
