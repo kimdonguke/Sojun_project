@@ -39,7 +39,7 @@ public class MakePrototype extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<ItemData> morning, lunch, dinner;
     ArrayList<ItemData> itemData = new ArrayList<>();
-    Button save, next, add;
+    Button next, add;
     SharedPreferences sharedPreferences;
     TextView nowTime;
 
@@ -159,7 +159,7 @@ public class MakePrototype extends AppCompatActivity {
     }
     public void makefullPrototype(ArrayList<ItemData> moring, ArrayList<ItemData> luch, ArrayList<ItemData> diner){
         OneDayData oneDayData = null;
-        OneWeekData oneWeekData=null;
+        OneWeekData oneWeekData = null;
         ArrayList<OneDayData> onedaydata_list=new ArrayList<>();
         oneDayData.setMorning(moring);
         oneDayData.setLunch(luch);
