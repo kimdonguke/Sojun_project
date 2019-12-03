@@ -31,4 +31,31 @@
         android:text="modify your sikdan"
         android:id="@+id/dateview_frag_addtestbtn"
         />
+    <Button
+        android:id="@+id/datemeal_morning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/dateview_frag_addtestbtn"
+        app:layout_constraintLeft_toLeftOf="@+id/dateview_frag_addtestbtn"
+        app:layout_constraintRight_toLeftOf="@+id/datemeal_lunch"
+        android:text="아침"
+        />
+    <Button
+        android:id="@+id/datemeal_lunch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/datemeal_morning"
+        app:layout_constraintLeft_toRightOf="@+id/datemeal_morning"
+        app:layout_constraintRight_toLeftOf="@+id/datemeal_dinner"
+        android:text="점심"
+        />
+    <Button
+        android:id="@+id/datemeal_dinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/datemeal_lunch"
+        app:layout_constraintRight_toRightOf="@+id/dateview_frag_addtestbtn"
+        app:layout_constraintLeft_toRightOf="@+id/datemeal_lunch"
+        android:text="저녁"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

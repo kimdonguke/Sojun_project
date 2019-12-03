@@ -1,6 +1,7 @@
 package com.example.sojun_project.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.Button;
 
 import com.example.sojun_project.Datas.ItemData;
 import com.example.sojun_project.R;
+import com.example.sojun_project.activities.ModifyDateFooditem;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,8 +32,8 @@ import androidx.recyclerview.widget.RecyclerView;
 public class FragmentDatemeal extends Fragment {
     SimpleTextAdapter recyclerViewAdapter;
     RecyclerView recyclerView;
-    Button button;
-    ArrayList<ItemData> itemData = new ArrayList<>();
+    Button button,moning,luch,diner;
+    ArrayList<ItemData> itemData,morning,lunch,dinner;
     @Override
     public void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); }
     @Nullable
@@ -39,6 +41,11 @@ public class FragmentDatemeal extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Context context=getContext();
         View v= inflater.inflate(R.layout.datemeal_fragment, container, false);
+
+        itemData=new ArrayList<>();
+        morning = new ArrayList<>();
+        lunch = new ArrayList<>();
+        dinner=new ArrayList<>();
 
         long now = System.currentTimeMillis();
         Date date = new Date(now);
@@ -49,38 +56,37 @@ public class FragmentDatemeal extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(context));//아니 형 이거 ㅇ내가 전에 짯던 코드에선 잘 돌아갔는데 이게 맞ㅈ눈지 모르겠어
         recyclerViewAdapter=new SimpleTextAdapter(itemData);
         recyclerView.setAdapter(recyclerViewAdapter);
+
         button=v.findViewById(R.id.dateview_frag_addtestbtn);
+        moning=v.findViewById(R.id.datemeal_morning);
+        luch=v.findViewById(R.id.datemeal_lunch);
+        diner=v.findViewById(R.id.datemeal_dinner);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("fragmentdatemeal","add 버튼 눌렀어요");
-                itemData.add(addItem("김민준","300kcal","5",getResources().getDrawable(R.drawable.justno)));
-                recyclerViewAdapter.notifyDataSetChanged();
-                // 형 디코 켜 ^^ㅣ발
+                Intent intent=new Intent(getContext(), ModifyDateFooditem.class);
+            }
+        });
+        moning.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        luch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        diner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
         return  v;
 
-    }
-    public ItemData addItem( String name, String kalori,String howmuch, Drawable foodpicture){
-        ItemData item= new ItemData(name,kalori,howmuch,foodpicture);
-        return item;
-    }
-    private ArrayList<String> getStringArrayPref(Context context, String key) {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        String json = prefs.getString(key, null);
-        ArrayList<String> urls = new ArrayList<String>();
-        if (json != null) {
-            try {
-                JSONArray a = new JSONArray(json);
-                for (int i = 0; i < a.length(); i++) {
-                    String url = a.optString(i);
-                    urls.add(url);
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-        return urls;
     }
 }

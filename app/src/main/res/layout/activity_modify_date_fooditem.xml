@@ -136,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:text="추가"
-                app:layout_constraintRight_toRightOf="@id/modifyitem_kalori"
+                app:layout_constraintRight_toRightOf="@id/modifyitem_howmuch"
                 app:layout_constraintTop_toBottomOf="@+id/modifyitem_kalori" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
