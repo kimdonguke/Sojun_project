@@ -18,6 +18,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sojun_project.Datas.ItemData;
+import com.example.sojun_project.Datas.OneDayData;
+import com.example.sojun_project.Datas.OneWeekData;
 import com.example.sojun_project.R;
 
 import org.json.JSONArray;
@@ -45,7 +47,6 @@ public class MakePrototype extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_prototype);
-
 
 
         sharedPreferences= getSharedPreferences("sFile",MODE_PRIVATE); // 셰어드 프리페런스 실행
@@ -198,8 +199,52 @@ public class MakePrototype extends AppCompatActivity {
         editor.apply();
         Log.e(TAG,key+"has saved");
     }
+    private void setStringArrayPref_oneday(Context context, String key, ArrayList<ItemData> values) { // save to sharedpreference onedaydata
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = prefs.edit();
+        JSONArray a = new JSONArray();
+        for (int i = 0; i < values.size(); i++) {
+            a.put(values.get(i));
+        }
+        if (!values.isEmpty()) {
+            editor.putString(key, a.toString());
+        } else {
+            editor.putString(key, null);
+        }
+        editor.apply();
+        Log.e(TAG,key+"has saved");
+    }
+    private void setStringArrayPref_oneweek(Context context, String key, ArrayList<ItemData> values) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = prefs.edit();
+        JSONArray a = new JSONArray();
+        for (int i = 0; i < values.size(); i++) {
+            a.put(values.get(i));
+        }
+        if (!values.isEmpty()) {
+            editor.putString(key, a.toString());
+        } else {
+            editor.putString(key, null);
+        }
+        editor.apply();
+        Log.e(TAG,key+"has saved");
+    }
     public ItemData addItem( String name, String kalori,String howmuch, Drawable foodpicture){
         ItemData item= new ItemData(name,kalori,howmuch,foodpicture);
         return item;
+    }
+    public void makefullPrototype(ArrayList<ItemData> moring, ArrayList<ItemData> luch, ArrayList<ItemData> diner){
+
+        OneDayData oneDayData = null;
+        OneWeekData oneWeekData=null;
+        ArrayList<OneDayData> onedaydata_list=new ArrayList<>();
+        oneDayData.setMorning(moring);
+        oneDayData.setLunch(luch);
+        oneDayData.setDinner(diner);
+        for(int i=0;i<7;i++){
+            onedaydata_list.add(oneDayData);
+        }
+        oneWeekData.setOneweekData(onedaydata_list);
+
     }
 }
