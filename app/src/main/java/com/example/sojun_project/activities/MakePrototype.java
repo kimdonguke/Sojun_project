@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -39,7 +40,7 @@ public class MakePrototype extends AppCompatActivity {
     final int GET_GALLERY_IMAGE = 200; // 갤러리 호출 코드
 
     ImageButton foodProfile;
-    EditText foodName, foodKalori;
+    EditText foodName, foodKalori, foodHowmuch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +66,7 @@ public class MakePrototype extends AppCompatActivity {
         foodProfile=findViewById(R.id.makeprototype_imgbtn);
         foodName=findViewById(R.id.makeprototype_foodname);
         foodKalori=findViewById(R.id.makeprototype_kalori);
+        foodHowmuch=findViewById(R.id.makeprototype_howmuch);
 
         save.setOnClickListener(new View.OnClickListener() { //셰어드 프리페런스에 저장, 각 값은 MORNING LUNCH DINNER로 저장됨 (nowText)
             @Override
@@ -145,16 +147,25 @@ public class MakePrototype extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.e(TAG,foodName.getText().toString()+foodKalori.getText());
-                if(foodName.getText().toString().matches("")&&foodKalori.getText().toString().matches("")) {
-                    Toast.makeText(MakePrototype.this, "음식 이름이나 칼로리 칸이 비어있습니다.", Toast.LENGTH_SHORT).show();
+                if(foodName.getText().toString().matches("")&&foodKalori.getText().toString().matches("")&&foodHowmuch.getText().toString().matches("")) {
+                    Toast.makeText(MakePrototype.this, "각 입력 칸을 모두 채워주세요", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     switch (nowTime.getText().toString()) {
                         case "MORNING":
+                            itemData.add(addItem(foodName.getText().toString(),foodKalori.getText().toString(),foodHowmuch.getText().toString(),foodProfile.getDrawable()));
+                            morning.add(addItem(foodName.getText().toString(),foodKalori.getText().toString(),foodHowmuch.getText().toString(),foodProfile.getDrawable()));
+                            gimoringAdapter.notifyDataSetChanged();
                             break;
                         case "LUNCH":
+                            itemData.add(addItem(foodName.getText().toString(),foodKalori.getText().toString(),foodHowmuch.getText().toString(),foodProfile.getDrawable()));
+                            lunch.add(addItem(foodName.getText().toString(),foodKalori.getText().toString(),foodHowmuch.getText().toString(),foodProfile.getDrawable()));
+                            gimoringAdapter.notifyDataSetChanged();
                             break;
                         case "DINNER":
+                            itemData.add(addItem(foodName.getText().toString(),foodKalori.getText().toString(),foodHowmuch.getText().toString(),foodProfile.getDrawable()));
+                            dinner.add(addItem(foodName.getText().toString(),foodKalori.getText().toString(),foodHowmuch.getText().toString(),foodProfile.getDrawable()));
+                            gimoringAdapter.notifyDataSetChanged();
                             break;
                         default:
                             Log.e(TAG, "something is wrong");
@@ -185,5 +196,10 @@ public class MakePrototype extends AppCompatActivity {
             editor.putString(key, null);
         }
         editor.apply();
+        Log.e(TAG,key+"has saved");
+    }
+    public ItemData addItem( String name, String kalori,String howmuch, Drawable foodpicture){
+        ItemData item= new ItemData(name,kalori,howmuch,foodpicture);
+        return item;
     }
 }

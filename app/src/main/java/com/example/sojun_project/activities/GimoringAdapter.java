@@ -3,6 +3,7 @@ package com.example.sojun_project.activities;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,10 +21,14 @@ public class GimoringAdapter extends RecyclerView.Adapter<GimoringAdapter.ViewHo
     private ArrayList<ItemData> mData=null;
 
     public  class ViewHolder extends RecyclerView.ViewHolder{
-
+        TextView name, kalori, howmuch;
+        ImageView profile;
         public ViewHolder(final View itemView){
             super(itemView);
-
+            name=itemView.findViewById(R.id.fooditem_foodname);
+            kalori=itemView.findViewById(R.id.fooditem_kalori);
+            howmuch=itemView.findViewById(R.id.fooditem_howmuch);
+            profile=itemView.findViewById(R.id.fooditem_foodimg);
         }
     }
 
@@ -39,10 +44,10 @@ public class GimoringAdapter extends RecyclerView.Adapter<GimoringAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull GimoringAdapter.ViewHolder viewHolder, int i) {
         ItemData item =mData.get(i);
-//        viewHolder.food_name.setText(item.getFoodname());
-//        viewHolder.food_kalori.setText(item.getFoodkalori());
-//        viewHolder.food_howmuch.setText(item.getFoodhowmuch());
-//        viewHolder.food_imageView.setImageDrawable(item.getFoodimg());
+        viewHolder.name.setText(item.getFoodname());
+        viewHolder.kalori.setText(item.getFoodkalori());
+        viewHolder.howmuch.setText(item.getFoodhowmuch());
+        viewHolder.profile.setImageDrawable(item.getFoodimg());
     }
     @Override// 그거 아니야 형 ㅅㅂ
     public int getItemCount() {

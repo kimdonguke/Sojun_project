@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginHorizontal="10dp"
         android:layout_marginBottom="10dp"
-        android:text="add test button"
+        android:text="modify your sikdan"
         android:id="@+id/dateview_frag_addtestbtn"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
