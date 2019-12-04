@@ -69,8 +69,8 @@ public class MakePrototype extends AppCompatActivity {
         foodHowmuch=findViewById(R.id.makeprototype_howmuch);
 
         if(onSearchData("contact")){
-            Intent intent=new Intent(MakePrototype.this,ViewPagerActivity.class);
-            startActivity(intent);
+            onSearchDatas();
+
         }
 
         next.setOnClickListener(new View.OnClickListener() {// 다음 시간으로 넘어가기
@@ -103,7 +103,7 @@ public class MakePrototype extends AppCompatActivity {
                             Toast.makeText(MakePrototype.this,"아이템을 저장해주세요",Toast.LENGTH_SHORT).show();
                         }
                         else {
-                            makefullPrototype(morning,lunch,dinner);
+
                             Intent intent = new Intent(getApplicationContext(), ViewPagerActivity.class);
                             startActivity(intent);
                         }
@@ -194,5 +194,18 @@ public class MakePrototype extends AppCompatActivity {
                 return true;
             }
         }
+    }
+    protected void onSearchDatas(){
+        SharedPreferences sp = getSharedPreferences("shared", MODE_PRIVATE);
+        String strContact = sp.getString("contact", "");
+
+        // 변환
+        OneWeekData contact = gson.fromJson(strContact, OneWeekData.class);
+        Intent intent=new Intent(MakePrototype.this,ViewPagerActivity.class);
+        intent.putExtra("object",contact.getOneweekData());
+        Log.e("make prototype","intent");
+        startActivity(intent);
+//        tvId.setText(contact.getId());
+//        tvName.setText(contact.getName());
     }
 }

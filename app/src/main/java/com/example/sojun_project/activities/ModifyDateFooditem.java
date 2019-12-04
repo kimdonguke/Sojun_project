@@ -27,16 +27,15 @@ import java.util.Date;
 import java.util.Locale;
 
 public class ModifyDateFooditem extends AppCompatActivity {
-    private Button morning,lunch,dinner,makedialogue,additembtn;
-    private EditText modifyfood_editname,modifyfood_editkalori,modifyfood_edithowmuch;
-    private Switch once;
-    private String TAG = "ModifyDateFooditem";
+   Button morning,lunch,dinner,makedialogue,additembtn;
+    EditText modifyfood_editname,modifyfood_editkalori,modifyfood_edithowmuch;
+   Switch once;
+  String TAG = "ModifyDateFooditem";
     ArrayList<ItemData> morninglis, lunchlist, dinnerlist,fuck;
     RecyclerView recyclerView; GimoringAdapter gimoringAdapter;
     ImageButton modify_foodprofile;
 
     int checkweek=1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,9 +61,11 @@ public class ModifyDateFooditem extends AppCompatActivity {
         dinner=findViewById(R.id.modifyitem_dinner);
         makedialogue=findViewById(R.id.modifyitem_dialogue);
         once=findViewById(R.id.modifyitem_onceswitch);
+
         modifyfood_editname=findViewById(R.id.modifyitem_name);
         modifyfood_editkalori=findViewById(R.id.modifyitem_kalori);
         additembtn=findViewById(R.id.modifyitem_modifybtn);
+        modifyfood_edithowmuch=findViewById(R.id.modifyitem_howmuch);
         modify_foodprofile=findViewById(R.id.modifyitem_imgbtn);
 
         morning.setOnClickListener(new View.OnClickListener() {
@@ -128,6 +129,7 @@ public class ModifyDateFooditem extends AppCompatActivity {
                 foodhowmuch = modifyfood_edithowmuch.getText().toString();
                 if(foodname!=null&&foodkalori!=null&&foodhowmuch!=null) {
                     fuck.add(addItem(foodname, foodkalori, foodhowmuch, modify_foodprofile.getDrawable()));
+                    //함수 하나 만들어서 각자 switch로 list 저장하고 list 업데이트하기
                 }
                 else{
                     Toast.makeText(ModifyDateFooditem.this, "edit을 모두 채워주세용", Toast.LENGTH_SHORT).show();

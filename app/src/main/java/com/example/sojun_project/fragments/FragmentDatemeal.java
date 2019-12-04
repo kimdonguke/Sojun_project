@@ -13,8 +13,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.sojun_project.Datas.ItemData;
+import com.example.sojun_project.Datas.OneWeekData;
 import com.example.sojun_project.R;
 import com.example.sojun_project.activities.ModifyDateFooditem;
+import com.example.sojun_project.activities.ViewPagerActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,6 +43,9 @@ public class FragmentDatemeal extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Context context=getContext();
         View v= inflater.inflate(R.layout.datemeal_fragment, container, false);
+
+        ViewPagerActivity viewPagerActivity=(ViewPagerActivity)getActivity();
+        //OneWeekData oneWeekData=viewPagerActivity.oneWeekData;
 
         itemData=new ArrayList<>();
         morning = new ArrayList<>();
