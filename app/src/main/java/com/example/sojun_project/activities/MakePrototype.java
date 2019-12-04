@@ -70,7 +70,6 @@ public class MakePrototype extends AppCompatActivity {
 
         if(onSearchData("contact")){
             onSearchDatas();
-
         }
 
         next.setOnClickListener(new View.OnClickListener() {// 다음 시간으로 넘어가기
@@ -99,13 +98,13 @@ public class MakePrototype extends AppCompatActivity {
                         }
                         break;
                     case "DINNER":
+                        Toast.makeText(MakePrototype.this, "dinner", Toast.LENGTH_SHORT).show();
                         if (dinner.isEmpty()){
                             Toast.makeText(MakePrototype.this,"아이템을 저장해주세요",Toast.LENGTH_SHORT).show();
                         }
                         else {
-
-                            Intent intent = new Intent(getApplicationContext(), ViewPagerActivity.class);
-                            startActivity(intent);
+                            makefullPrototype(morning,lunch,dinner);
+                            onSearchDatas();
                         }
                         break;
                         default:
