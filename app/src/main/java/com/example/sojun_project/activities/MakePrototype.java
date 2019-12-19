@@ -159,9 +159,11 @@ public class MakePrototype extends AppCompatActivity {
         return item;
     }
     public void makefullPrototype(ArrayList<ItemData> moring, ArrayList<ItemData> luch, ArrayList<ItemData> diner){
+        Log.e("????","????");
         OneDayData oneDayData = new OneDayData(moring,luch,diner);
         ArrayList<OneDayData> onedaydata_list=new ArrayList<>();
         for(int i=0;i<7;i++){
+            Log.e("fuck","???");
             onedaydata_list.add(oneDayData);
         }
         OneWeekData oneWeekData=new OneWeekData(onedaydata_list);
@@ -197,7 +199,7 @@ public class MakePrototype extends AppCompatActivity {
     protected void onSearchDatas(){
         SharedPreferences sp = getSharedPreferences("shared", MODE_PRIVATE);
         String strContact = sp.getString("contact", "");
-
+       Log.e("fuck","fuck");
         // 변환
         OneWeekData contact = gson.fromJson(strContact, OneWeekData.class);
         Intent intent=new Intent(MakePrototype.this,ViewPagerActivity.class);
